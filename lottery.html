@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>每日抽奖</title>
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="tt.css">
+    <script type="text/javascript" src="jquery-3.0.0.min.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="headert">
+            <p>每天抽奖</p>
+        </div>
+        <div class="lottery">
+            <img id="titler" src="images/title.png" alt="">
+            <img id="turntable" src="images/turntable.png" alt="">
+            <img id="go" src="images/Go.png" alt="">
+            <div class="winhint">
+                <b>恭喜您获得：</b>
+                <button id="ensure">确&nbsp;&nbsp;&nbsp;&nbsp;定</button>
+            </div>
+        </div>
+        <div class="win">
+            <div class="winnews">
+                <div class="winner">
+                    <li><img id="horn" src="images/horn.png" alt=""></li>
+                    <ul>
+                        <li>恭喜189****472</li>
+                        <li>抽中</li>
+                        <li id="prize" >ipone7 plus</li>
+                    </ul>
+                </div>
+                <img id="ballon_lt" src="images/ballonleft.png" alt="">
+                <img id="ballon_rg" src="images/ballonright.png" alt="">
+            </div>
+            <div class="winrecord">
+                <div id="odd"></div>
+                <div class="even">
+                    <ul>
+                        <li>186****245</li>
+                        <li>抽中</li>
+                        <li>6.8%黄金加息券</li>
+                    </ul>
+                </div>
+                <div id="odd">
+                    <ul>
+                        <li>186****245</li>
+                        <li>抽中</li>
+                        <li>6.8%黄金加息券</li>
+                    </ul>
+                </div>
+                <div class="even">
+                    <ul>
+                        <li>186****245</li>
+                        <li>抽中</li>
+                        <li>6.8%黄金加息券</li>
+                    </ul>
+                </div>
+                <div id="odd">
+                    <ul>
+                        <li>186****245</li>
+                        <li>抽中</li>
+                        <li>6.8%黄金加息券</li>
+                    </ul>
+                </div>
+                <div class="even">
+                    <ul>
+                        <li>186****245</li>
+                        <li>抽中</li>
+                        <li>6.8%黄金加息券</li>
+                    </ul>
+                </div>
+            </div>
+            <img id="h_record" src="images/record.png" alt="">
+        </div>
+        <div class="footer">
+            <div class="rule">
+                <img id="problem" src="images/problem.png" alt="">
+                <a id="rule_show" href="javascript:void(0)">活动规则</a>
+                <div class="rule_hide">
+                    <p>① 分享“百变美人季”活动至微信1次</p>
+                    <p>② 为参赛作品每投票5次（投票时间为2016年5月、8月、11月的1日-10日）</p>
+                    <p>③ 预约美丽到家TM服务1次 </p>
+                </div>
+            </div>
+            <div class="wallet">
+                <img src="images/wallet.png" alt="">
+                <img id="life" src="images/life.png" alt="">
+            </div>
+            <div class="about">
+                <p>本活动最终解释权归小资钱包所有</p>
+                <p>本活动与苹果公司无关</p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    jQuery(document).ready(function($) { //活动规则
+        var bo = false;
+        $("#rule_show").click(function() {
+            if (bo) {
+                $(".rule_hide").hide();
+                bo = false;
+            } else {
+                $(".rule_hide").show();
+                bo = true;
+            }
+        });
+    });
+
+    //奖品内容
+    var prizes = [{
+        prizeName: 'ipone7 Plus',
+    }, {
+        prizeName: '返现2元 ',
+    }, {
+        prizeName: '黄金加息券6%',
+    }, {
+        prizeName: '红包',
+    }, {
+        prizeName: '拍立得',
+    }, {
+        prizeName: '加息券1%',
+    }, {
+        prizeName: '返现88元',
+    }, ];
+
+    var round = 5; //转盘圈数
+    // 0/7*360,
+    // 1/7*360,
+    // 2/7*360,
+    // 3/7*360,
+    // 4/7*360,
+    // 5/7*360,
+    // 6/7*360,
+
+
+
+    $('#turntable').click(function(event) { //点击抽奖
+        var idx = parseInt(7 * Math.random()); //0 ~ 6
+        //转盘转动抽奖
+        $('#go').css('webkitTransform', 'rotate(' + (round * 360 + idx / prizes.length * 360) + 'deg)');
+
+        var winhint = function() { //中奖提示内容
+            $(".winhint b").after("<h4>" + prizes[idx].prizeName + "<h4>").parent().css({
+                zIndex: '10000',
+            });
+        }
+        setTimeout(winhint, 2000);
+
+        //中奖用户通知
+        var prize = function() {
+
+            $("#prize").text(prizes[idx].prizeName);
+            var tet=$(".winner ul").html();
+            $('.winrecord div').eq(1).children("ul").html(tet);
+        }
+
+        setTimeout(prize, 3000);
+
+
+
+    });
+
+    $("#ensure").click(function(event) { //关闭中奖提示
+        /* Act on the event */
+        $(".winhint").css({
+            zIndex: '-1',
+        }).children('h4').remove();
+
+        $('#go').css('webkitTransform', 'rotate(' + 0 + 'deg)');
+    });
+    </script>
+    <script type="text/javascript">
+    document.querySelector('html').style.fontSize = window.innerWidth / 640 * 1000 + 'px';
+    // document.getElementById('content').style.display = 'block';
+    </script>
+</body>
+
+</html>

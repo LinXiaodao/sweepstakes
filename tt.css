@@ -1,0 +1,246 @@
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /*html {
+        font-size: 1000px;
+    }*/
+        
+        li {
+            float: left;
+            list-style-type: none;
+        }
+        
+        .content {
+            position: relative;
+            width: 0.64rem;
+            background: url(images/bg.png) no-repeat;
+            margin: auto;
+            text-align: center;
+        }
+        
+        .headert {
+            position: relative;
+            height: 0.08rem;
+            line-height: 0.08rem;
+            font-size: 0.05rem;
+            background-color: white;
+            text-align: center;
+        }
+        
+        .lottery {
+            width: 0.64rem;
+            position: relative;
+            text-align: center;
+        }
+        
+        .winhint {
+            width: 0.35rem;
+            height: 0.16rem;
+            line-height: 0.05rem;
+            font-size: 0.03rem;
+            text-align: center;
+            position: absolute;
+            background-color: red;
+            left: 50%;
+            transform: translate(-50%);
+            top: 0.5rem;
+            opacity: 0.9;
+            z-index: -1;
+            /*            display: none;
+*/
+        }
+        
+        .winhint b {
+            text-align: left;
+            font-size: 0.02rem;
+        }
+        
+        .lottery img {
+            display: block;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        
+        #titler {
+            width: 0.6rem;
+            height: 0.2rem;
+            position: relative;
+            top: 0.02rem;
+        }
+        
+        #turntable {
+            width: 0.6rem;
+            height: 0.60rem;
+            position: relative;
+        }
+        
+        #go {
+            width: 0.05rem;
+            height: 0.07rem;
+            position: absolute;
+            top: 0.36rem;
+            transition: transform 2s;
+            transform: rotate(0deg);
+            transform-origin: 50% 0.125rem;
+            margin-left: -0.025rem;
+        }
+        
+        .win {
+            position: relative;
+            width: 0.64rem;
+            text-align: center;
+        }
+        
+        .winnews {
+            position: relative;
+            width: 0.5rem;
+            height: 0.05rem;
+            background: white;
+            margin: auto;
+            border: 0.005rem solid #FEA474;
+            border-radius: 0.008rem;
+            line-height: 0.05rem;
+        }
+        
+        .winner li {
+            float: left;
+            display: block;
+            list-style-type: none;
+            font-size: 0.02rem;
+            margin-right: 0.03rem;
+        }
+        
+        #horn {
+            position: relative;
+            width: 0.04rem;
+            height: 0.04rem;
+            left: 0.015rem;
+            top: 50%;
+            transform: translate(15%);
+        }
+        
+        #ballon_lt {
+            position: absolute;
+            display: block;
+            width: 0.08rem;
+            height: 0.08rem;
+            top: -0.08rem;
+            left: -0.045rem;
+        }
+        
+        #ballon_rg {
+            position: absolute;
+            display: block;
+            width: 0.08rem;
+            height: 0.08rem;
+            top: -0.08rem;
+            left: 0.465rem;
+        }
+        
+        #h_record {
+            position: absolute;
+            width: 0.350rem;
+            height: 0.08rem;
+            top: 0.08rem;
+            display: block;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        
+        .winrecord {
+            position: relative;
+            margin-top: 0.05rem;
+            width: 0.5rem;
+            border: 0.005rem solid #FEA474;
+            border-radius: 0.008rem;
+            background: white;
+            font-size: 0.025rem;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        
+        .winrecord div {
+            width: 0.5rem;
+            height: 0.07rem;
+            line-height: 0.07rem;
+            text-align: center;
+            display: block;
+        }
+        
+        .even {
+            background: #F3EFC2;
+        }
+        
+        .winrecord li {
+            margin: 0 0.02rem;
+            display: block;
+            font-size: 0.025rem;
+        }
+        
+        .rule {
+            font-size: 0.012rem;
+            position: relative;
+            width: 0.50rem;
+            margin: auto;
+            margin-top: 0.03rem;
+        }
+        
+        #problem {
+            width: 0.02rem;
+            height: 0.02rem;
+        }
+        
+        .rule p {
+            position: relative;
+            line-height: 0.04rem;
+        }
+        
+        .rule a {
+            color: white;
+            font-size: 0.02rem;
+        }
+        
+        .rule_hide {
+            position: relative;
+            top: 0.02rem;
+            display: none;
+            text-align: left;
+            clear: both;
+        }
+        
+        .wallet {
+            position: relative;
+            margin: 0 auto;
+            text-align: center;
+            width: 0.5rem;
+            height: 0.05rem;
+            margin-top: 0.04rem;
+            clear: both;
+        }
+        
+        .wallet img {
+            position: absolute;
+            left: 0.1rem;
+            width: 0.131rem;
+            height: 0.036rem;
+            display: block;
+        }
+        
+        #life {
+            position: absolute;
+            left: 0.25rem;
+        }
+        
+        .footer p {
+            font-size: 0.015rem;
+        }
+        
+        .about {
+            width: 0.64rem;
+            height: 0.07rem;
+            text-align: center;
+            position: relative;
+            color: white;
+            margin-top: 0.01rem;
+        }
